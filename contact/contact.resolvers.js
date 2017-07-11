@@ -12,6 +12,7 @@ export const resolvers = {
 
   Mutation: {
     insertContact: (obj, args, context, info) => insertContact(obj, args, context, info),
+    updateContact: (obj, args, context, info) => updateContact(obj, args, context, info),
     deleteContact: (obj, args, context, info) => deleteContact(obj, args, context, info),
   },
 

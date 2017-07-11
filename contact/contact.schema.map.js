@@ -20,16 +20,16 @@ const schemaMap = joinMonsterAdapt(executableSchema, {
       salutation: {
         sqlColumn: 'salutation',
       },
-      firstName: {
+      first_name: {
         sqlColumn: 'first_name',
       },
-      lastName: {
+      last_name: {
         sqlColumn: 'last_name',
       },
       position: {
         sqlColumn: 'position',
       },
-      workStatus: {
+      work_status: {
         sqlColumn: 'work_status',
       },
     },

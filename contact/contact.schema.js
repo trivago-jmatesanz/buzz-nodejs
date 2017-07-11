@@ -6,6 +6,14 @@ export const schema = `
 
   type Mutation {
     insertContact(
+      first_name: String!
+      last_name: String!
+      salutation: String!
+      position: String!
+      created_by: Int!
+    ): Contact
+
+    updateContact(
       firstName: String!
       lastName: String!
       salutation: String!
@@ -13,15 +21,15 @@ export const schema = `
       createdBy: Int!
     ): Contact
 
-    deleteContact(id: Int!): Contact
+    deleteContact(id: [Int]!): Int
   }
 
   type Contact {
     id: Int!
     salutation: String
-    firstName: String
-    lastName: String
+    first_name: String
+    last_name: String
     position: String
-    workStatus: Boolean
+    work_status: Boolean
   }
 `;
