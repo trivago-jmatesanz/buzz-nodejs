@@ -11,3 +11,13 @@ export function mysqlConnector(obj, args, context, info) {
     .catch((err) => { return err; }
   );
 }
+
+export function deleteEntity(obj, args, context, info, entity) {
+  return entity.forge({ id: args.id })
+    .destroy()
+    .then(() => {
+      return { id: args.id };
+    })
+    .catch((err) => { return err; },
+    );
+}

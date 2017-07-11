@@ -4,12 +4,24 @@ export const schema = `
     contacts: [Contact]
   }
 
+  type Mutation {
+    insertContact(
+      firstName: String!
+      lastName: String!
+      salutation: String!
+      position: String!
+      createdBy: Int!
+    ): Contact
+
+    deleteContact(id: Int!): Contact
+  }
+
   type Contact {
     id: Int!
     salutation: String
     firstName: String
     lastName: String
-    workStatus: Boolean
     position: String
+    workStatus: Boolean
   }
 `;

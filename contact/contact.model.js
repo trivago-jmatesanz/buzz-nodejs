@@ -1,7 +1,9 @@
 import bookshelf from '../db';
 
-const contactModel = bookshelf.Model.extend({
+const ContactModel = bookshelf.Model.extend({
   tableName: 'contact',
 });
 
-module.exports = bookshelf.model('contactModel', contactModel);
+const contactModel = bookshelf.model('ContactModel', ContactModel); // Register model to bookshelf registry plugin to avoid circular dependency
+
+export { contactModel }; // Export registered model
