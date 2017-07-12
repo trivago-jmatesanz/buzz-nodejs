@@ -25,3 +25,15 @@ export function updateContact(obj, args, context, info) {
   const contact = contactModel;
   return contact;
 }
+
+export function generateFullName(obj, args, context, info) {
+  return contactModel.where('id', obj.id)
+    .fetch({ columns: ['first_name', 'last_name'] })
+    .then((result) => {
+      const parsedResult = JSON.parse(JSON.stringify(result));
+      const fullName = `${parsedResult.first_name} ${parsedResult.last_name}`;
+      return fullName;
+    })
+    .catch((err) => { return err; },
+    );
+}

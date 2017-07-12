@@ -1,7 +1,8 @@
 import {
   selectCommand,
   insertContact,
-  deleteContact
+  deleteContact,
+  generateFullName
 } from './contact.connectors';
 
 export const resolvers = {
@@ -16,5 +17,7 @@ export const resolvers = {
     deleteContact: (obj, args, context, info) => deleteContact(obj, args, context, info),
   },
 
-  Contact: {},
+  Contact: {
+    fullName: (obj, args, context, info) => generateFullName(obj, args, context, info),
+  },
 };

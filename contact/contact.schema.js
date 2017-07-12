@@ -1,6 +1,6 @@
 export const schema = `
   type Query {
-    contact(id: Int): Contact
+    contact(id: Int!): Contact
     contacts: [Contact]
   }
 
@@ -14,10 +14,11 @@ export const schema = `
     ): Contact
 
     updateContact(
-      firstName: String!
-      lastName: String!
-      salutation: String!
-      position: String!
+      id: Int!
+      firstName: String
+      lastName: String
+      salutation: String
+      position: String
       createdBy: Int!
     ): Contact
 
@@ -31,5 +32,6 @@ export const schema = `
     last_name: String
     position: String
     work_status: Boolean
+    fullName: String
   }
 `;

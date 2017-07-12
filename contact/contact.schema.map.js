@@ -32,6 +32,9 @@ const schemaMap = joinMonsterAdapt(executableSchema, {
       work_status: {
         sqlColumn: 'work_status',
       },
+      fullName: {
+        sqlDeps: ['first_name', 'last_name'],
+      },
     },
   },
 });
