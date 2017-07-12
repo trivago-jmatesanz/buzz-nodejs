@@ -2,6 +2,7 @@ import {
   selectCommand,
   insertContact,
   deleteContact,
+  updateContact,
   generateFullName
 } from './contact.connectors';
 

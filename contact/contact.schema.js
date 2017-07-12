@@ -15,11 +15,11 @@ export const schema = `
 
     updateContact(
       id: Int!
-      firstName: String
-      lastName: String
+      first_name: String
+      last_name: String
       salutation: String
       position: String
-      createdBy: Int!
+      updated_by: Int!
     ): Contact
 
     deleteContact(id: [Int]!): Int

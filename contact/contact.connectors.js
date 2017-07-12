@@ -22,8 +22,20 @@ export function deleteContact(obj, args, context, info) {
 }
 
 export function updateContact(obj, args, context, info) {
-  const contact = contactModel;
-  return contact;
+  const contact = args;
+  contact.updated_at = new Date();
+  return contactModel.where('id', args.id)
+  .save(contact,
+    {
+      method: 'update',
+      patch: true
+    }
+  ).then((result) => {
+    const parsedResult = JSON.parse(JSON.stringify(result));
+    return parsedResult;
+  }).catch(
+    (err) => { return err; },
+  );
 }
 
 export function generateFullName(obj, args, context, info) {
