@@ -1,6 +1,6 @@
 const config      = require('./knexfile');
 const env         = 'development';
-export const knex        = require('knex')(config[env]); // Export Knex for access to db connection without ORM
+export const knex = require('knex')(config[env]); // Export Knex for access to db connection without ORM
 const bookshelf   = require('bookshelf')(knex);
 
 knex.migrate.latest([config]);
